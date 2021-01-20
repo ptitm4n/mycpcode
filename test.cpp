@@ -1,22 +1,46 @@
 #include "mylib.h"
 
-using namespace std;
-int count_unique_substrings(string const& s)
+struct Node{
+    int data;
+    Node* left;
+    Node* right;
+    Node()
+    {
+    }
+    Node(int data)
+    {
+        this -> data = data;
+        left = right = 0;
+    }
+};
+void change1(Node* node)
 {
-    int n = s.size();
-
-    const int p = 31;
-    const int m = 1e9 + 9;
-    vector<long long> p_pow(n); 
-    p_pow[0] = 1;
-
-    for(int i = 1; i < n; i ++)
-    p_pow[i] = (p_pow[i - 1] * p) % m;
-
-    vector<long long> h(n + 1, 0);
-    
+    cout << "Node Info " << (&node) << endl;
+    node = new Node(1);
 }
+
+void change(Node*& node) 
+{
+    cout << "Node Info " << (&node) << endl;
+    change1(node);
+}
+
+void printNode(Node* node)
+{
+    cout << "Node " << node << " Address " << (&node) << " Left " << (node -> left)  << " Right " << (node -> right) << endl;
+}
+
+void printRealNode(Node*& node)
+{
+    cout << "Node " << node << " Address " << (&node) << " Left " << (node -> left)  << " Right " << (node -> right) << endl;
+}
+
 int main()
 {
+    Node* node = new Node(1);
+    node -> left = new Node(2);
+    node -> right = new Node(3);
+    printNode(node);
+    printRealNode(node);
 
 }
