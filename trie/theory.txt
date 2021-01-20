@@ -1,0 +1,4 @@
+Trie la mot cau truc du lie de quan ly mot tap hop cac xau
+Them mot xau vao tap hop
+Xoa mot xau khoi tap hop
+Kiem tra mot xau co ton tai trong tap hop hay khong
